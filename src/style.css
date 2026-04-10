@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'm5x7';
+  src: url('/fonts/m5x7.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+main h1 {
+  margin: 0;
+  font-family: 'm5x7', monospace;
+  font-size: 3rem;
+  color: #e8e8e8;
+  letter-spacing: 0.05em;
+}
+
+/* ── D-pad nav grid ─────────────────────────────────── */
+
+.dpad-nav {
+  display: grid;
+  grid-template-areas:
+    ".    top    ."
+    "left center right"
+    ".    bottom .";
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+
+.dpad-wrapper  { grid-area: center; }
+#nav-blog      { grid-area: top;    padding-bottom: 10px; }
+#nav-music     { grid-area: left;   padding-right: 28px; }
+#nav-apps      { grid-area: right;  padding-left: 28px; }
+#nav-projects  { grid-area: bottom; padding-top: 10px; }
+
+/* ── D-pad SVG ──────────────────────────────────────── */
+
+.dpad-svg {
+  display: block;
+  width: 160px;
+  height: 160px;
+}
+
+/* Arrow fills — set via CSS so transitions work cleanly */
+#arrow-up, #arrow-down, #arrow-left, #arrow-right {
+  fill: #1a1a1a;
+  transition: fill 0.15s;
+}
+
+#arrow-up.active,
+#arrow-down.active,
+#arrow-left.active,
+#arrow-right.active {
+  fill: #4a9eff;
+}
+
+/* Pointer cursor on SVG hit areas */
+#hover-up, #hover-down, #hover-left, #hover-right {
+  cursor: pointer;
+}
+
+/* ── Nav links ──────────────────────────────────────── */
+
+.nav-link {
+  font-family: 'm5x7', monospace;
+  font-size: 1.25rem;
+  color: #e8e8e8;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.15s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4a9eff;
+}

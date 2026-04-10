@@ -1,2 +1,2 @@
 # StenobotWeb
-Home site for music, apps, and other random projects.
+Website for music, apps, and other random projects by Andy Myers.

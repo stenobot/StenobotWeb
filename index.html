@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stenobot</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>STENOBOT</h1>
+      <div class="dpad-nav">
+
+        <a href="https://stenobot.wordpress.com/" target="_blank" rel="noopener"
+           class="nav-link" id="nav-blog">BLOG</a>
+
+        <a href="music.html" class="nav-link" id="nav-music">MUSIC</a>
+
+        <div class="dpad-wrapper">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="dpad-svg">
+            <!-- Cross body -->
+            <path d="
+              M 79,0 L 121,0 A 12,12 0 0 1 133,12
+              L 133,67 L 188,67 A 12,12 0 0 1 200,79
+              L 200,121 A 12,12 0 0 1 188,133
+              L 133,133 L 133,188 A 12,12 0 0 1 121,200
+              L 79,200 A 12,12 0 0 1 67,188
+              L 67,133 L 12,133 A 12,12 0 0 1 0,121
+              L 0,79 A 12,12 0 0 1 12,67
+              L 67,67 L 67,12 A 12,12 0 0 1 79,0 Z
+            " fill="#e8e8e8"/>
+            <!-- Arrows -->
+            <polygon id="arrow-up"    points="100,22  83,52  117,52"/>
+            <polygon id="arrow-down"  points="100,178 83,148 117,148"/>
+            <polygon id="arrow-left"  points="22,100  52,83  52,117"/>
+            <polygon id="arrow-right" points="178,100 148,83 148,117"/>
+            <!-- Center circle -->
+            <circle cx="100" cy="100" r="18" fill="#1a1a1a"/>
+            <!-- Invisible hit areas over each arm -->
+            <rect id="hover-up"    x="67"  y="0"   width="66" height="67" fill="none" pointer-events="all"/>
+            <rect id="hover-down"  x="67"  y="133" width="66" height="67" fill="none" pointer-events="all"/>
+            <rect id="hover-left"  x="0"   y="67"  width="67" height="66" fill="none" pointer-events="all"/>
+            <rect id="hover-right" x="133" y="67"  width="67" height="66" fill="none" pointer-events="all"/>
+          </svg>
+        </div>
+
+        <a href="apps.html" class="nav-link" id="nav-apps">APPS</a>
+
+        <a href="projects.html" class="nav-link" id="nav-projects">PROJECTS</a>
+
+      </div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
