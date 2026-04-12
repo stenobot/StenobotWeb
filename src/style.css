@@ -27,6 +27,15 @@ main {
   gap: 24px;
 }
 
+.title-logo {
+  width: 160px;
+  image-rendering: pixelated;
+}
+
+body.top-aligned {
+  align-items: flex-start;
+}
+
 main h1 {
   margin: 0;
   font-family: 'm5x7', monospace;
@@ -49,10 +58,10 @@ main h1 {
 }
 
 .dpad-wrapper  { grid-area: center; }
-#nav-blog      { grid-area: top;    padding-bottom: 10px; }
-#nav-music     { grid-area: left;   padding-right: 28px; }
-#nav-apps      { grid-area: right;  padding-left: 28px; }
-#nav-projects  { grid-area: bottom; padding-top: 10px; }
+#nav-blog      { grid-area: top;    padding-bottom: 14px; }
+#nav-music     { grid-area: left;   padding-right: 16px; }
+#nav-apps      { grid-area: right;  padding-left: 16px; }
+#nav-projects  { grid-area: bottom; padding-top: 14px; }
 
 /* ── D-pad SVG ──────────────────────────────────────── */
 
@@ -72,12 +81,59 @@ main h1 {
 #arrow-down.active,
 #arrow-left.active,
 #arrow-right.active {
-  fill: #4a9eff;
+  fill: #03E9E7;
 }
 
 /* Pointer cursor on SVG hit areas */
 #hover-up, #hover-down, #hover-left, #hover-right {
   cursor: pointer;
+}
+
+/* ── Page slide transitions (View Transitions API) ─── */
+
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes slide-to-left     { to   { transform: translateX(-100%); } }
+@keyframes slide-from-right  { from { transform: translateX(100%);  } }
+@keyframes slide-to-right    { to   { transform: translateX(100%);  } }
+@keyframes slide-from-left   { from { transform: translateX(-100%); } }
+@keyframes slide-to-top      { to   { transform: translateY(-100%); } }
+@keyframes slide-from-bottom { from { transform: translateY(100%);  } }
+@keyframes slide-to-bottom   { to   { transform: translateY(100%);  } }
+@keyframes slide-from-top    { from { transform: translateY(-100%); } }
+
+/* APPS: new page enters from the right */
+html[data-slide="right"]::view-transition-old(root) {
+  animation: slide-to-left 0.35s ease-in-out;
+}
+html[data-slide="right"]::view-transition-new(root) {
+  animation: slide-from-right 0.35s ease-in-out;
+}
+
+/* MUSIC: new page enters from the left */
+html[data-slide="left"]::view-transition-old(root) {
+  animation: slide-to-right 0.35s ease-in-out;
+}
+html[data-slide="left"]::view-transition-new(root) {
+  animation: slide-from-left 0.35s ease-in-out;
+}
+
+/* BLOG: new page enters from the top */
+html[data-slide="up"]::view-transition-old(root) {
+  animation: slide-to-bottom 0.35s ease-in-out;
+}
+html[data-slide="up"]::view-transition-new(root) {
+  animation: slide-from-top 0.35s ease-in-out;
+}
+
+/* PROJECTS: new page enters from the bottom */
+html[data-slide="down"]::view-transition-old(root) {
+  animation: slide-to-top 0.35s ease-in-out;
+}
+html[data-slide="down"]::view-transition-new(root) {
+  animation: slide-from-bottom 0.35s ease-in-out;
 }
 
 /* ── Nav links ──────────────────────────────────────── */
@@ -93,5 +149,5 @@ main h1 {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #4a9eff;
+  color: #03E9E7;
 }
