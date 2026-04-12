@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="/src/style.css" />
     <script>const _d=sessionStorage.getItem('slideDir');if(_d){document.documentElement.dataset.slide=_d;sessionStorage.removeItem('slideDir');}</script>
   </head>
-  <body>
+  <body class="home">
     <main>
-      <img src="./src/title-logo.png" alt="Stenobot" class="title-logo" />
+      <div class="title-group">
+        <img src="./src/title-logo.png" alt="Stenobot" class="title-logo" />
+        <span id="version-label"></span>
+      </div>
       <div class="dpad-nav">
 
         <a href="/blog/" class="nav-link" id="nav-blog">BLOG</a>
