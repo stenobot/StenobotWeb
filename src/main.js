@@ -1,7 +1,7 @@
-import { version } from '../package.json';
+//import { version } from '../package.json';
 
 const versionLabel = document.getElementById('version-label');
-if (versionLabel) versionLabel.textContent = `v${version}`;
+//if (versionLabel) versionLabel.textContent = `v${version}`;
 
 // Direction to store when navigating away from this page.
 const slideDir = { 'nav-blog': 'up', 'nav-music': 'left', 'nav-apps': 'right', 'nav-projects': 'down' };
