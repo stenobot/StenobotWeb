@@ -337,6 +337,10 @@ html[data-slide="down"]::view-transition-new(root) {
   color: #444;
 }
 
+.page-section iframe {
+  max-width: 100%;
+}
+
 /* ── Nav links ──────────────────────────────────────── */
 
 .nav-link {
