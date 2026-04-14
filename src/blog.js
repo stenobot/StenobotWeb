@@ -1,5 +1,5 @@
 const API = 'https://public-api.wordpress.com/wp/v2/sites/stenobot.wordpress.com/posts'
-          + '?_fields=title,excerpt,date,link,featured_media&_embed=wp:featuredmedia&per_page=10';
+          + '?_fields=title,excerpt,date,link,content&per_page=10';
 
 const list = document.getElementById('post-list');
 
@@ -11,8 +11,8 @@ fetch(API)
         year: 'numeric', month: 'short', day: 'numeric',
       });
       const excerpt = post.excerpt.rendered.replace(/<[^>]+>/g, '').trim();
-      const imgSrc = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
-      const img = imgSrc ? `<img class="post-image" src="${imgSrc}" alt="" loading="lazy" />` : '';
+      const imgMatch = post.content.rendered.match(/src="([^"]+\.(?:png|jpe?g|gif)(?:\?[^"]*)?)"/i);
+      const img = imgMatch ? `<img class="post-image" src="${imgMatch[1]}" alt="" loading="lazy" />` : '';
       return `
         <li class="post-item">
           <a class="post-title" href="${post.link}" target="_blank" rel="noopener">${post.title.rendered}</a>
