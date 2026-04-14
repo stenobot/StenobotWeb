@@ -236,9 +236,14 @@ html[data-slide="down"]::view-transition-new(root) {
 /* ── Table of contents ──────────────────────────────── */
 
 .toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #1a1a1a;
+  border-bottom: 1px solid #2e2e2e;
   width: 100%;
   max-width: 640px;
-  padding: 0 24px;
+  padding: 12px 24px;
 }
 
 .toc-list {
@@ -280,12 +285,17 @@ html[data-slide="down"]::view-transition-new(root) {
 }
 
 .page-section h2 {
+  position: sticky;
+  top: var(--toc-height, 49px);
+  z-index: 9;
+  background: #1a1a1a;
   margin: 0;
   font-family: 'm5x7', monospace;
   font-size: 2.5rem;
   color: #e8e8e8;
   letter-spacing: 0.05em;
   border-bottom: 1px solid #2e2e2e;
+  padding-top: 8px;
   padding-bottom: 8px;
 }
 

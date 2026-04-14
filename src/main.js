@@ -44,3 +44,12 @@ navConfig.forEach(({ navId, arrowId, hoverId }) => {
     }
   });
 });
+
+// Keep --toc-height in sync so sticky H2s sit flush below the sticky TOC.
+const toc = document.querySelector('.toc');
+if (toc) {
+  const observer = new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--toc-height', toc.offsetHeight + 'px');
+  });
+  observer.observe(toc);
+}
