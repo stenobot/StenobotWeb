@@ -23,5 +23,5 @@ fetch(API)
     }).join('');
   })
   .catch(() => {
-    list.innerHTML = '<li class="post-error">Could not load posts.</li>';
+    list.innerHTML = '<li class="post-error">Having trouble getting the blog posts from WordPress. Probably due to a network issue.</li>';
   });

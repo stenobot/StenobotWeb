@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'CascadiaMono';
+  src: url('./fonts/CascadiaMono.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -34,6 +41,7 @@ main {
 
 body.top-aligned {
   align-items: flex-start;
+  padding-top: 48px;
 }
 
 body.home {
@@ -46,6 +54,19 @@ main h1 {
   font-size: 3rem;
   color: #e8e8e8;
   letter-spacing: 0.05em;
+}
+
+.page-subtitle {
+  margin: -8px 0 0;
+  font-family: 'CascadiaMono', monospace;
+  font-size: 1rem;
+  color: #555;
+}
+
+.page-title {
+  font-family: 'CascadiaMono', monospace;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .title-group {
@@ -210,6 +231,100 @@ html[data-slide="down"]::view-transition-new(root) {
   font-size: 1rem;
   color: #555;
   letter-spacing: 0.05em;
+}
+
+/* ── Table of contents ──────────────────────────────── */
+
+.toc {
+  width: 100%;
+  max-width: 640px;
+  padding: 0 24px;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 24px;
+}
+
+.toc-link {
+  font-family: 'm5x7', monospace;
+  font-size: 1.25rem;
+  color: #aaa;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.15s;
+}
+
+.toc-link:hover { color: #03E9E7; }
+
+/* ── Page content sections ───────────────────────────── */
+
+.page-content {
+  width: 100%;
+  max-width: 640px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.page-section h2 {
+  margin: 0;
+  font-family: 'm5x7', monospace;
+  font-size: 2.5rem;
+  color: #e8e8e8;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #2e2e2e;
+  padding-bottom: 8px;
+}
+
+.page-section h3 {
+  margin: 0;
+  font-family: 'm5x7', monospace;
+  font-size:1.9rem;
+  font-weight: 600;
+  color: #aaa;
+  letter-spacing: 0.03em;
+}
+
+.page-section p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+.page-section a {
+  color: #03E9E7;
+  text-decoration: none;
+}
+
+.page-section a:hover {
+  text-decoration: underline;
+}
+
+.embed-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #222;
+  border: 1px solid #2e2e2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'CascadiaMono', monospace;
+  font-size: 0.8rem;
+  color: #444;
 }
 
 /* ── Nav links ──────────────────────────────────────── */

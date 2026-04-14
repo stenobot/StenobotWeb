@@ -5,7 +5,8 @@
       "Bash(npm run:*)",
       "Bash(grep \"version\" /c/Users/steno/repos/StenobotWeb/dist/assets/main-*.js)",
       "Bash(grep -o '\"v[0-9.]*\"' /c/Users/steno/repos/StenobotWeb/dist/assets/main-*.js)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(powershell.exe:*)"
     ]
   }
 }
